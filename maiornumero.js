@@ -1,5 +1,6 @@
 //Algoritmo que lê três números inteiros e mostra o maior deles
 
+const { log } = require('console')
 const readline = require('readline')
 
 const rl = readline.createInterface({
@@ -7,28 +8,34 @@ const rl = readline.createInterface({
     output: process.stdout
 })
 
-rl.question('Informe o primeiro numero: ', (num1) => {
-    rl.question('Informw o segundo numero: ', (num2) => {
-        rl.question('Informe o terceiro numero: ', (num3) => {
+rl.question('Informe o primeiro número: ', (num1) => {
+    rl.question('Informe o segundo número: ', (num2) => {
+        rl.question('Informe o terceiro número: ', (num3) => {
 
-            const numero1 = parseFloat(num1) 
+            const numero1 = parseFloat(num1)
             const numero2 = parseFloat(num2)
             const numero3 = parseFloat(num3)
 
-            if (numero1 > numero2 && numero1 > numero3) {
-                console.log('O maior numero é ', numero1)
-            } else {
-                if(numero2 > numero1 && numero2 > numero3) {
-                    console.log('O maior numero é: ', numero2)
+            if (!isNaN(numero1) && !isNaN(numero2) && !isNaN(num3)) {
+
+                if (numero1 > numero2 && numero1 > numero3) {
+                    console.log('O maior numero é:', numero1)
                 } else {
-                    if(numero3 > numero2 && numero3 > numero1) {
-                        console.log('O maior numero é: ', numero3)
+                    if (numero2 > numero1 && numero2 > numero3) {
+                        console.log('O maior numero é:', numero2)
+                    } else {
+                        if (numero3 > numero2 && numero3 > numero1) {
+                            console.log('O maior numero é:', numero3)
+                        }
                     }
                 }
+
+            } else {
+                console.log('Digite somente números!')
             }
 
             rl.close()
-            
+
         })
     })
 }) 
