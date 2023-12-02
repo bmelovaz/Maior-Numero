@@ -1,6 +1,5 @@
 //Algoritmo que lê três números inteiros e mostra o maior deles
 
-const { log } = require('console')
 const readline = require('readline')
 
 const rl = readline.createInterface({
